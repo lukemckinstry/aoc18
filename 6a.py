@@ -24,7 +24,6 @@ def closecoord(r,c,coords  ):
 	else:
 		return coords.index(closest[0])
 
-#ord Z is 90
 def process(x):	
 
 	coords = []
@@ -33,21 +32,16 @@ def process(x):
 		c = c.split(',')
 		x,y = int(c[0]), int(c[1].replace(' ',''))
 		coords.append( [x,y] )
-		print(x,y)
 		pass
 	minx = min([i[0] for i in coords])
 	miny = min([i[1] for i in coords])
 	maxx = max([i[0] for i in coords])
 	maxy = max([i[1] for i in coords])
-	print("x ", minx, maxx, "y ", miny, maxy)
 	base_arr = np.zeros(( maxy-miny, maxx-minx ))
 	
 	for r in range(maxy-miny):
-	#for r in range(2):
 		for c in range(maxx-minx):
-		#for c in range(2):
 			closest = closecoord(r,c,coords)
-			#print( c,",", r, " --> ", closest, " is closest ")
 			base_arr.itemset((r,c), closest)
 	
 
@@ -56,8 +50,7 @@ def process(x):
 	left = list([r[0] for r in base_arr])
 	right = list([r[-1] for r in base_arr])
 	borders = top + bot + left + right
-	#borders = top.append(bot).append(left).append(right) 
-	#print( len(borders) )
+
 	maxarea = 0
 	for i in range(len(coords)):
 		if i not in borders:
