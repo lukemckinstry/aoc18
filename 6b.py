@@ -9,7 +9,7 @@ def within10000(r,c,coords  ):
 		ydist = abs(pair[1] - r)
 		d += xdist
 		d += ydist
-	print(r,c, " dist ", d)
+	
 	if d < 10000:
 		return True
 	else:
@@ -23,7 +23,7 @@ def process(x):
 		c = c.split(',')
 		x,y = int(c[0]), int(c[1].replace(' ',''))
 		coords.append( [x,y] )
-		pass
+		
 	minx = min([i[0] for i in coords])
 	miny = min([i[1] for i in coords])
 	maxx = max([i[0] for i in coords])
