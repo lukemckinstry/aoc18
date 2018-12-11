@@ -17,8 +17,7 @@ def closecoord(r,c,coords  ):
 		if dist < mindist:
 			mindist = dist
 			closest = [pair]
-	#print( pair, " is closest to ", c,",", r, " and dist = ", mindist)
-	#print( "index ", coords.index(pair) )
+
 	if len(closest) > 1:
 		return 99
 	else:
