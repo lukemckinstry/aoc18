@@ -46,12 +46,6 @@ def process(x):
 	for r in x:
 		step = stepre.findall( r )
 		rows.append(step)
-	gates = list(set([i[0] for i in rows]))
-	steps = list(set([i[1] for i in rows]))
-	init = [i for i in gates if i not in steps]
-
-	print( "gates ", len(gates), "steps ", len(steps) )
-	print( "init ", init)
 
 	allnodes = [i[0] for i in rows] + [i[1] for i in rows]
 	allnodesset = list(set([i for i in allnodes])) 
